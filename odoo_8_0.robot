@@ -220,3 +220,8 @@ NewMany2One    [Arguments]    ${model}    ${field}
     Wait Until Page Contains Element	xpath=//ul[contains(@class,'ui-autocomplete') and not(contains(@style,'display: none'))]/li[last()]/a
     Click Link              xpath=//ul[contains(@class,'ui-autocomplete') and not(contains(@style,'display: none'))]/li[last()]/a
     ElementPostCheck
+
+NewMany2Many    [Arguments]    ${model}    ${field}
+    ElementPreCheck        xpath=//div[contains(@class,'openerp')][last()]//div[contains(@class,'oe_form_field_many2many')]/div[@data-bt-testing-model_name='${model}' and @data-bt-testing-name='${field}']//tr/td[contains(@class,'oe_form_field_many2many_list_row_add')]/a
+    Click Link             xpath=//div[contains(@class,'openerp')][last()]//div[contains(@class,'oe_form_field_many2many')]/div[@data-bt-testing-model_name='${model}' and @data-bt-testing-name='${field}']//tr/td[contains(@class,'oe_form_field_many2many_list_row_add')]/a
+    ElementPostCheck
