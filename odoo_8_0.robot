@@ -180,7 +180,7 @@ SelectListView  [Arguments]    ${model}    @{fields}
 
     # remove first " and " again (5 characters)
     ${xpath}=   Get Substring    ${xpath}    5
-    ${xpath}=    Catenate    (//table[contains(@class,'oe_list_content')]//tr[${xpath}]/td)[1]
+    ${xpath}=    Catenate    (//div[contains(@class, 'oe_view_manager_current') and not(contains(@style,'display: none'))]//table[contains(@class,'oe_list_content')]//tr[${xpath}]/td)[1]
     Click Element    xpath=${xpath}
     ElementPostCheck
 
