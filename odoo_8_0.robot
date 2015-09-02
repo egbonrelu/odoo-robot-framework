@@ -210,3 +210,5 @@ MainWindowMany2One          [Arguments]     ${field}    ${value}
     Click Link              xpath=//ul[contains(@class, 'ui-autocomplete') and not(contains(@style, 'display: none'))]//a[self::*/text()='${value}']    don't wait
     ElementPostCheck
     
+BackInBreadcrumb
+    Click Link              xpath=(//a[contains(@class,'oe_breadcrumb_item')])[last()]
