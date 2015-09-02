@@ -212,3 +212,11 @@ MainWindowMany2One          [Arguments]     ${field}    ${value}
     
 BackInBreadcrumb
     Click Link              xpath=(//a[contains(@class,'oe_breadcrumb_item')])[last()]
+
+NewMany2One    [Arguments]    ${model}    ${field}
+    ElementPreCheck         xpath=//div[contains(@class,'openerp')][last()]//input[@data-bt-testing-model_name='${model}' and @data-bt-testing-name='${field}']
+    #Click on the arrow
+    Click Element           xpath=//div[contains(@class,'openerp')][last()]//input[@data-bt-testing-model_name='${model}' and @data-bt-testing-name='${field}']//parent::div//span[2]
+    Wait Until Page Contains Element	xpath=//ul[contains(@class,'ui-autocomplete') and not(contains(@style,'display: none'))]/li[last()]/a
+    Click Link              xpath=//ul[contains(@class,'ui-autocomplete') and not(contains(@style,'display: none'))]/li[last()]/a
+    ElementPostCheck
