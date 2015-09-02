@@ -34,7 +34,7 @@ MainMenu    [Arguments]    ${menu}
 
 # checked: 8.0 ok
 SubMenu    [Arguments]    ${menu}
-    Click Link				xpath=//td[contains(@class,'oe_leftbar')]//ul/li/a[descendant::span/text()[normalize-space()='${menu}']]
+    Click Link				xpath=//td[contains(@class,'oe_leftbar')]//div[not(contains(@style, 'display: none'))]/ul/li/a[descendant::span/text()[normalize-space()='${menu}']]
     Wait Until Page Contains Element	xpath=//div[contains(@class,'oe_view_manager_body')]
 
 # checked: 8.0 ok
