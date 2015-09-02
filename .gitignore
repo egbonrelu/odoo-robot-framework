@@ -1,3 +1,6 @@
 .idea
 config_80.py
 *.pyc
+*.png
+*.xml
+*.html
