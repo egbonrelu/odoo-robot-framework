@@ -65,7 +65,7 @@ WriteInField                [Arguments]     ${model}    ${fieldname}    ${value}
 
 # checked: 8.0 ok
 Button                      [Arguments]     ${model}    ${button_name}
-     Click Button           xpath=//div[contains(@class,'openerp')][last()]//*[not(contains(@style,'display:none'))]//button[@data-bt-testing-name='${button_name}']
+     Click Button           xpath=//div[contains(@class,'openerp')][last()]//*[not(contains(@style,'display:none'))]//button[@data-bt-testing-model_name='${model}' and @data-bt-testing-name='${button_name}']
      Wait For Condition     return true;    20.0
      ElementPostCheck
 
